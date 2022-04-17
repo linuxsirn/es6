@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+ <script>
+     //es6 提供了class。其实是语法糖，ES5可以实用全部功能
+
+    //ES5 实用构造函数演示类的创建
+    function Phone(brand,price){
+        this.brand = brand;
+        this.price = price
+    }
+    Phone.prototype.callout = function(){
+        console.log('i can  call ');
+    }
+
+    let  huawei = new Phone('hawei',59999);
+    console.log(huawei.brand);
+    console.log(huawei)
+    huawei.callout();
+    // es6 实现 上面代码
+    // class Phone{
+    //     constructor(){
+    //     this.brand = brand;
+    //     this.price = price  
+    //     }
+    //     callout(){
+    //         console.log('我可以给你打电话了')
+    //     }
+    // }
+    
+ </script>
+</html>

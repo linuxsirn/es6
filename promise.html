@@ -1,0 +1,17 @@
+<script>
+    //promise 是ES6 新引入的promise 异步解决方案
+    //promise 对象有3个状态，初始化，调用成功，调用失败
+    //resolve ，reject 是两个函数，可以改变promise的状态
+    //把异步任务封装到一个promise里面，然后通过 resolve，和rejec 来改变 函数的状态。再通过。then 来处理
+    const p = new Promise(function (resolve,reject){
+        setTimeout(() => {
+            let data = '数据库的数据';
+            resolve(data);//这里resolve 会把P 的状态设置为成功
+        }, 1000);
+    }) 
+    p.then(function(vale){
+        console.log(vale);
+    },function(reason){
+
+    })
+</script>

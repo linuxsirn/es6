@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script type="module">
+//ES6 之前 没有模块化的概念，而是靠一些社区做的模块化的规范
+// 1 commonjs =》 NodeJS，Browserify
+// 2 AMD => requirejs
+// 3 CMD => seaJS
+//模块功能主要有两个命令构成 export import
+//export 命令用于规定模块对外接扣 。improt 命令用于输入其他模块提供的功能
+    
+
+//通用方式引入引入m1.js
+    import * as m1 from './js/m1.js';
+    console.log(m1);
+    //引入m2.js
+    import * as m2 from './js/m2.js';
+    console.log(m2);
+    //引入默认暴露的 m3.js 
+    import * as m3 from './js/m3.js';
+    console.log(m3);
+    m3.default.change();
+//结构赋值的方式引入
+    import {school,teach} from './js/m1.js';
+    import {school as m2school,findjob as m2findjob} from './js/m2.js';
+    import {default as m3default} from './js/m3.js';
+    console.log(school)
+    teach();
+    console.log(m2school,m2findjob)
+    console.log(m3default)
+//简便的形式 只针对默认暴露
+    import m3simple from './js/m3.js';
+    console.log(m3simple);
+</script>
+ 
+</html>

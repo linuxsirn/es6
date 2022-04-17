@@ -1,0 +1,14 @@
+<script>
+    //es6 允许在大括号里面，直接写入变量和函数，作为对象的属性和方法，这样写法更简洁
+    let name  = '尚硅谷';
+    let change = function(){
+        console.log('say hello')
+    }
+    const school ={
+        name, //等价于 name：name
+        change,//等价誉 change：change
+        fangfa(){ //等价fangfa:function(){}
+            console.log('这是一个方法')
+        }
+    }
+</script>

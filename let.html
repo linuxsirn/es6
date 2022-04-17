@@ -1,0 +1,29 @@
+<script>
+  //声明变量
+  let a;
+  let b,c,d
+  let e =100;
+  let f=522,g=233;
+  //let 不能重复声明变量
+  let star = 'jay';
+  //let star = 'Amay';
+  //let 在块级作用域里是不能被外面使用，但不影响作用域效果
+//   {
+//       let girl = '粥氧气';
+//   }
+//   console.log(girl);//这里会报错
+  
+  //let 不存在变量提升
+//   console.log(name)
+//   let  name = 'xiaohua';
+  //会报错。未找到变量name
+  let divs = document.getElementsByClassName('divclass');
+  for(var i = 0 ; i<4;i++){
+      divs[i].onclick = function(){
+          this.xxxxxxx;
+          //这里为什么不能使用I ，比如divs[i].xxxxx. 因为var声明的变量没有块级作用域的概念。
+          //当这里的回调触发时，I 已经是4 。
+          //用let 声明变量就可以解决这个问题。
+      }
+  }
+</script>

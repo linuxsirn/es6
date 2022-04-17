@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //map: ES6 提供了map 数据结构，他类似于对象，也是键值对的集合，但是他的健的范围不限于字符串
+    //各种类型的值，包括对象都有可以当做健。map也实现了iterator 接扣，可以使用扩展运算符和for of 遍历
+    //内置方法:size ,set,get,has,clear.
+    let m = new Map();
+    m.set('name','itguigu');
+    m.set('change',function(){console.log('只是一个放放歌')})
+    let key = {
+        school:'ATGUIG'
+    }
+    m.set(key,['beijing','shanghai'])
+</script>
+</html>

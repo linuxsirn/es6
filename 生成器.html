@@ -1,0 +1,55 @@
+<script>
+    // 生成器函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同
+    //生成器是其实就是一个特殊的函数，可以解决回调地狱的问题。他不能直接执行 gen(), 需要使用迭代器.nex（）方法执行
+    function * gen(){
+        console.log('hello generator');
+        yield '第一段代码';
+        yield '第二段代码';
+
+        yield '第三段代码';
+
+    }
+    // let iterator = gen();
+    // console.log(iterator.next());
+    // console.log(iterator.next());
+    // console.log(iterator.next());
+    // console.log(iterator.next());
+    //重点，.next() 是可以传入参数的。调用next（）中有实参，则将这个参数传递给生成器当前暂停位置的yield
+
+    //生成器 应该实例
+
+    function getusers(){
+        setTimeout(() => {
+            let data = '用户数据';
+            iterator.next(data);
+        }, 1000);
+
+    }
+
+    function getOrders(){
+        setTimeout(() => {
+            let  data = '用户订单';
+            iterator.next(data);
+        }, 1000);
+        
+    }
+    function getGoods(){
+        setTimeout(() => {
+            let data = '用户商品';
+            iterator.next(data);
+        }, 1000);
+    }
+
+    function * gen (){
+       let r =  yield getusers();
+       console.log(r);
+       r =  yield getOrders();
+       console.log(r);
+       r = yield getGoods();
+       console.log(r);
+    }
+
+    let iterator = gen();
+        iterator.next();
+
+</script>

@@ -1,0 +1,40 @@
+<script>
+    
+    //ES6 允许使用箭头函数=》
+    //、1,this  静态的，this 始终指向函数声明时所在作用域下的this的值 ,无论你是call apliy 等 也无法改变
+    //  2，不能作为构造函数 ，实例化对象
+    //  3，不能使用argments 变量
+    //  4, 简写 。当只有一个参数的时候 可以 省略小括号，函数体只有一个行代码可以省略花括号，return 也关键字也必须省略，此时语句的执行结果就是函数的返回值
+
+    let fn = (a,b)=>{
+
+    }
+     function getName(){
+         console.log(this.name)
+     }
+     let getNmame2=()=>{
+       //  console.log(arguments);
+        console.log(this.name)
+     }
+     window.name = 'shang gui gu ';
+     const SCHOOL ={
+         name:'ATGUIGU'
+     };
+     //getName();
+    // getNmame2();
+     //此刻 输出的结果都是 shang  gui  gu ，因为他们的this都是window
+     getName.call(SCHOOL);//call 改变了 getname的this
+     getNmame2.call(SCHOOL);//call 无法改变箭头函数的this
+     //此刻 输出的结果都是 ATGUIGU  和 shang  gui  gu 
+     let add = n =>{
+         //最有一个 参数可以，省略小括号
+     }
+
+     let pow = n=> n*n
+     //函数体只有一行代码可以省略花括号，return 也关键字也必须省略，此时语句的执行结果就是函数的返回值
+     console.log(pow(8));
+     // 箭头函数使用场景：适用于与this 无关的 函数，比如 数组的 回调函数 。arr.filter(item=>item%2===0)
+     //                  不适用于和this有关的回调比如 dom 元素的事件回调。因为很多时候要用到this  ，这里的this是事件源， 
+     //                  不适用于对象的方法，正常对象方法里的this 是 对象本身，但如果使用箭头函数，这里的this就不是对象了。是函数声明的时候，外层作用域的this
+     //                  此处说的不适用，只是说不适合，不是说一定不能用。在实际应用中，也可以使用
+</script>

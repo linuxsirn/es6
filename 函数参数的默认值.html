@@ -1,0 +1,19 @@
+<script>
+//ES6 允许给函数参数赋值 初始值
+// 1,形参的初始值,一般建议默认参数 在参数列表最后
+// 2，默认值可以与解构赋值联合使用
+function add(a,b,c=10){
+    return a+b+C
+}
+//2 与解构赋值联合使用,还可以给属性赋初始值,当传进来的对象没有这个属性的时候，就使用默认值
+function connect({host='127.0.0.1',username,passwd}){
+    console.log(host);
+    console.log(username);
+    console.log(passwd);
+}
+connect({
+    host:'localhost',
+    username:'root',
+    passwd:'root'
+})
+</script>

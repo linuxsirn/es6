@@ -1,0 +1,18 @@
+<script>
+   const p = new Promise((resolve,reject)=>{
+       setTimeout(() => {
+           resolve('用户数据')
+       }, 1000);
+   })
+   //then d 返回结构也是 Promise对象，对象的状态由回调函数的结果决定
+   //如果回调函数中返回的结果是非promise 类型的属性、状态为成功，返回值为对象的成功值
+  let ret =  p.then(value=>{
+     console.log(value)//只要返回不是promise类型的属性，ret就是成功状态，没写return 默认返回就是undefinded 。也是非promise对象
+                       //如果返回一个promise对象，那么该对象内部的promise 对象的在状态就是 ret 的状态，如果内部的promise 抛出异常，则 ret 的状态也是reject
+
+   },reason=>{
+
+   })
+
+   console.log(ret);
+</script>

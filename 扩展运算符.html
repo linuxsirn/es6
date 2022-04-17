@@ -1,0 +1,37 @@
+<body>
+    <div>
+        <div>
+            <div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    //es6 扩展运算符【。。。】
+    //扩展运算符可以将素组 转换为逗号的分割【参数序列】
+    const TFBOYS=['YIYANG','SSS','SSSS'];
+    //声明一个函数 
+    function chunwan(){
+        console.log(arguments[1]);
+    }
+    chunwan(...TFBOYS); //相当于 chunwan('YIYANG','SSS','SSSS')
+    //1,数组的合并
+    const kuaizi = ['wang','xiaoyang']
+    const fenghuang = ['zengyi','linghua']
+    //es5 的作法，kuaizi.concat(fenghuang)
+
+    //es6 的作法
+    const zuixuanxiaopinguo = [...kuaizi,...fenghuang]
+    console.log(zuixuanxiaopinguo);
+    //2 .素组的克隆
+    const sanzhihua = ['E','G','M'];
+    const sanyecao = [...sanzhihua];
+    // 3 。将伪素组转为真正的数组,这里的divs 是一个对象
+    const divs = document.querySelectorAll('div');
+    //将 对象  转换为 数组 
+    const divarry =  [...divs];
+    console.log(divs);
+    console.log(divarry);
+</script>

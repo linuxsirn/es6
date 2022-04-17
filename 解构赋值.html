@@ -1,0 +1,23 @@
+<script>
+    //ES6 允许按照一定模式从数组和对象中提取值，对变量进行赋值
+    // 1. 素组的解构
+    const F4 =['小沈阳','liu','z','x'];
+    let [xiao,liu,zhao,song]=F4;
+    console.log(xiao)
+    console.log(liu)
+    console.log(zhao)
+    console.log(song)
+    //此处，相当于申明了4个变量，并用F4素组赋初始值
+    // 2. 对象的解构
+    const zhaobenshan = {
+        name :'赵本山',
+        age : '44',
+        skill : function(){
+            console.log('演小品')
+            console.log(this)
+        } 
+    }
+    let {name,age ,skill} = zhaobenshan;
+    skill()//注意这里的单独调用 这个函数后，里面的this是 window
+    zhaobenshan.skill();//这里的this 是对象本身。
+</script>

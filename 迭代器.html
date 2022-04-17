@@ -1,0 +1,43 @@
+<script>
+ //es6 创造了一种新的迭代器，for...of 循环 iterator 接口主要提供
+ //原生具备 iterator 接口的数据 可以ongoing for of 遍历   
+ // Array Arguments set map typeArray NodeList 这些数据都内置了 iterator 接口
+ //声明一个素组
+ const xiyou  = ['唐僧','sun']
+ for (let v of xiyou){
+     console.log(v);//V 输出是的值
+     //如果使用 for in 遍历 这里的v  就是索引
+ }
+
+ //应用实例
+ const banji = {
+     name :'磐石1中',
+     stus:['wyj','xiaotian','xiaoming','xiaolan'],
+     [Symbol.iterator](){
+         let index =  0 ;
+          
+         return {
+            next:()=>{
+                 if(index<this.stus.length){
+                     index++;
+                     return {
+                         value:this.stus[index],
+                         done:false
+                        
+                     }
+
+                 } else {
+                     return {
+                         value:undefined,
+                         done:true
+                     }
+                 }  
+            }
+         } 
+     }
+ }
+
+  for (let v of banji){
+      console.log(v);
+  }
+</script>
